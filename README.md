@@ -74,7 +74,7 @@ class User extends Model {
 Done! Now, to the `Post` model!
 
 ```php
-use DevDojo\LaravelReactions\Traits\Reacts;
+use DevDojo\LaravelReactions\Traits\Reactable;
 use DevDojo\LaravelReactions\Contracts\ReactableInterface;
 
 class Post extends Model implements ReactableInterface {
