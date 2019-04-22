@@ -9,9 +9,6 @@ trait Reacts
 {
     public function reactTo(ReactableInterface $reactable, Reaction $reaction)
     {
-        // print_r((object)$reaction);
-        // die('blah');
-        // die('test');
         $reacted = $reactable->reactions()->where([
             'responder_id' => $this->getKey()
         ])->first();
@@ -29,16 +26,12 @@ trait Reacts
 
     }
 
-    public function isReactedBy($responder = null)
-    {
-        if (is_null($responder)) {
-            $responder = auth()->user();
-        }
-
-        return $this->reactions()
-            ->where('responder_id', $responder->id)
-            ->where('responder_type', get_class($responder))->exists();
-
+    public function hasReaction(ReactableInterface $reactable){
+    	// return $this->reactions()
+     //        ->where('responder_id', $this->id)
+     //        ->where('responder_type', get_class($this))
+     //        ->where('')->exists();
+     		return $reactable->reacted();
     }
 
     /**

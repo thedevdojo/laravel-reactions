@@ -28,4 +28,16 @@ trait Reactable
             ->groupBy('name')
             ->get();
     }
+
+    public function reacted($responder = null)
+    {
+        if (is_null($responder)) {
+            $responder = auth()->user();
+        }
+
+        return $this->reactions()
+            ->where('responder_id', $responder->id)
+            ->where('responder_type', get_class($responder))->exists();
+
+    }
 }
