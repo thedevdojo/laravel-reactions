@@ -9,20 +9,27 @@ trait Reacts
 {
     public function reactTo(ReactableInterface $reactable, Reaction $reaction)
     {
+        $reactedToReaction = $reactable->reactions()
+            ->where('responder_id', $this->getKey())
+            ->where('responder_type', get_class($this))->first();
+            
+
+        $currentReactedName = '';
+        if($reactedToReaction){
+            $currentReactedName = $reactedToReaction->name;
+            $this->deleteReaction($reactable, $reactedToReaction);
+            
+        }
+
         $reacted = $reactable->reactions()->where([
             'responder_id' => $this->getKey()
         ])->first();
 
-        if ( !$reacted ) {
+        if ( !$reacted && ($currentReactedName != $reaction->name) ) {
             return $this->storeReaction($reactable, $reaction);
         }
 
-        if ($reacted->name == $reaction->name) {
-            return $reaction;
-        }
-        $this->deleteReaction($reactable, $reacted);
-
-        return $this->storeReaction($reactable, $reaction);
+        return null;
 
     }
 
