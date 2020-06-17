@@ -68,12 +68,6 @@ trait Reacts
 
     protected function deleteReaction(ReactableInterface $reactable, Reaction $reacted)
     {
-        $reactable->reactions()->detach(
-            $reacted->id,
-            [
-                'responder_id' => $this->id,
-                'responder_type' => get_class($this)
-            ]
-        );
+        $reactable->reactions()->wherePivot('reaction_id', $reacted->id)->wherePivot('responder_id', $this->id)->wherePivot('responder_type', get_class($this))->detach();
     }
 }
