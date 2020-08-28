@@ -22,7 +22,6 @@ interface ReactableInterface
      *          // gets the given reactions count for the $post
      *          $reaction->count
      *      }
-     *
      */
     public function getReactionsSummary();
 }

@@ -2,10 +2,10 @@
 
 namespace DevDojo\LaravelReactions\Tests\Integration;
 
-use Illuminate\Database\Schema\Blueprint;
 use DevDojo\LaravelReactions\Models\Reaction;
 use DevDojo\LaravelReactions\Tests\Integration\Support\PostTestModel;
 use DevDojo\LaravelReactions\Tests\Integration\Support\UserTestModel;
+use Illuminate\Database\Schema\Blueprint;
 
 class ReactableModelTest extends BaseTestCase
 {
@@ -24,7 +24,7 @@ class ReactableModelTest extends BaseTestCase
 
         $this->assertEquals([
             ['name' => 'like', 'count' => 1],
-            ['name' => 'love', 'count' => 2]
+            ['name' => 'love', 'count' => 2],
         ], $summaryAsArray);
     }
 

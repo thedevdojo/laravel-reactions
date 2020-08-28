@@ -38,6 +38,5 @@ trait Reactable
         return $this->reactions()
             ->where('responder_id', $responder->id)
             ->where('responder_type', get_class($responder))->exists();
-
     }
 }

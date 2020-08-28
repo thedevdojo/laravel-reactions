@@ -2,10 +2,10 @@
 
 namespace DevDojo\LaravelReactions\Tests\Integration;
 
-use Illuminate\Database\Schema\Blueprint;
 use DevDojo\LaravelReactions\Models\Reaction;
 use DevDojo\LaravelReactions\Tests\Integration\Support\PostTestModel;
 use DevDojo\LaravelReactions\Tests\Integration\Support\UserTestModel;
+use Illuminate\Database\Schema\Blueprint;
 
 class ReactsModelTest extends BaseTestCase
 {
@@ -29,11 +29,11 @@ class ReactsModelTest extends BaseTestCase
         $user->reactTo($post, $loveReaction);
 
         $this->seeInDatabase('reactables', [
-            'reaction_id' => $loveReaction->id,
-            'reactable_id' => $post->id,
+            'reaction_id'    => $loveReaction->id,
+            'reactable_id'   => $post->id,
             'reactable_type' => PostTestModel::class,
-            'responder_id' => $user->id,
-            'responder_type' => UserTestModel::class
+            'responder_id'   => $user->id,
+            'responder_type' => UserTestModel::class,
         ]);
     }
 

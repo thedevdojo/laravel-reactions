@@ -1,4 +1,5 @@
 <?php
+
 namespace DevDojo\LaravelReactions\Tests\Unit;
 
 use DevDojo\LaravelReactions\Models\Reaction;
