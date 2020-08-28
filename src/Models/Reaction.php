@@ -8,7 +8,7 @@ class Reaction extends Model
 {
     public static function createFromName($name)
     {
-        $reaction = new static;
+        $reaction = new static();
         $reaction->name = $name;
 
         return $reaction;

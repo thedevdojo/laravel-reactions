@@ -2,9 +2,9 @@
 
 namespace DevDojo\LaravelReactions\Tests\Integration\Support;
 
-use Illuminate\Database\Eloquent\Model;
 use DevDojo\LaravelReactions\Contracts\ReactableInterface;
 use DevDojo\LaravelReactions\Traits\Reactable;
+use Illuminate\Database\Eloquent\Model;
 
 class PostTestModel extends Model implements ReactableInterface
 {

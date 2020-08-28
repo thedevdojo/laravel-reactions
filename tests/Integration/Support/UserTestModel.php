@@ -2,8 +2,8 @@
 
 namespace DevDojo\LaravelReactions\Tests\Integration\Support;
 
-use Illuminate\Database\Eloquent\Model;
 use DevDojo\LaravelReactions\Traits\Reacts;
+use Illuminate\Database\Eloquent\Model;
 
 class UserTestModel extends Model
 {
