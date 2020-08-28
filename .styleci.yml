@@ -1,0 +1,8 @@
+risky: false
+version: 7
+preset: recommended
+finder:
+  exclude:
+    - "tests"
+    - "vendor"
+  name: "*.php"
