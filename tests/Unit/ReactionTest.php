@@ -3,7 +3,7 @@ namespace DevDojo\LaravelReactions\Tests\Unit;
 
 use DevDojo\LaravelReactions\Models\Reaction;
 
-class ReactionTest extends \PHPUnit_Framework_TestCase
+class ReactionTest extends \PHPUnit\Framework\TestCase
 {
     public function testCreateFromNameShouldCreateReaction()
     {
