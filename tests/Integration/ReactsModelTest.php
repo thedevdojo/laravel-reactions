@@ -9,7 +9,7 @@ use DevDojo\LaravelReactions\Tests\Integration\Support\UserTestModel;
 
 class ReactsModelTest extends BaseTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->createTestEntitiesTables();
@@ -28,7 +28,7 @@ class ReactsModelTest extends BaseTestCase
 
         $user->reactTo($post, $loveReaction);
 
-        $this->seeInDatabase('reactables', [
+        $this->assertDatabaseHas('reactables', [
             'reaction_id' => $loveReaction->id,
             'reactable_id' => $post->id,
             'reactable_type' => PostTestModel::class,

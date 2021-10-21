@@ -9,7 +9,7 @@ use DevDojo\LaravelReactions\Tests\Integration\Support\UserTestModel;
 
 class ReactableModelTest extends BaseTestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->createTestEntitiesTables();
