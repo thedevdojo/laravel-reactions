@@ -14,14 +14,12 @@ class CreateReactablesTable extends Migration
     public function up()
     {
         Schema::create('reactables', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
 
-            $table->integer('reaction_id');
-            $table->integer('reactable_id');
-            $table->string('reactable_type');
+            $table->unsignedInteger('reaction_id');
 
-            $table->integer('responder_id');
-            $table->string('responder_type');
+            $table->morphs('reactable');
+            $table->morphs('responder');
         });
     }
 

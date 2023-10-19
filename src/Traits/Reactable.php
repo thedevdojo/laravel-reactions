@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 trait Reactable
 {
-    /**
-     * @return MorphToMany
-     */
-    public function reactions()
+
+    public function reactions(): MorphToMany
     {
         /** @var $this Model */
         return $this->morphToMany('DevDojo\\LaravelReactions\\Models\\Reaction', 'reactable')
@@ -38,6 +36,5 @@ trait Reactable
         return $this->reactions()
             ->where('responder_id', $responder->id)
             ->where('responder_type', get_class($responder))->exists();
-
     }
 }
