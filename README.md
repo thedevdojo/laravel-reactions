@@ -26,7 +26,7 @@ Laravel Reactions is the package you need if you want to implement reactions for
 Install the package with Composer.
 
 ``` bash
-$ composer require DevDojo/laravel-reactions
+composer require DevDojo/laravel-reactions
 ```
 
 Add the Service Provider to your `config/app.php` file.
@@ -38,7 +38,7 @@ DevDojo\LaravelReactions\Providers\ReactionsServiceProvider::class,
 Run the migrations to create `reactions` and `reactables` tables.
 
 ```bash
-$ php artisan migrate
+php artisan migrate
 ```
 
 You're good to go.
@@ -191,7 +191,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 ## Testing
 
 ``` bash
-$ vendor/bin/phpunit
+vendor/bin/phpunit
 ```
 
 ## Contributing
