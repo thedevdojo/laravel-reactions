@@ -4,6 +4,12 @@ All Notable changes to `laravel-reactions` will be documented in this file.
 
 Updates are following the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 1.1.0 - 2024-06-26
+
+### Added
+
+- Add support of Laravel 11;
+
 ## 1.1.0 - 2023-10-19
 
 ### Added
